@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.14.5
+%define		kdeplasmaver	5.15.3
 %define		qtver		5.9.0
 %define		kpname		breeze-gtk
 Summary:	Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.14.5
+Version:	5.15.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a63c068eaadc620edc5871d2407bc5a1
+# Source0-md5:	b369b343d6dd4ef3af6d18340a83f308
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -36,10 +36,13 @@ BuildRequires:	kf5-kwidgetsaddons-devel
 BuildRequires:	kf5-kwindowsystem-devel
 BuildRequires:	kp5-kdecoration-devel >= %{kdeplasmaver}
 BuildRequires:	libstdc++-devel
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
+BuildRequires:	python3-pycairo-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	qt5-qmake
 BuildRequires:	rpmbuild(macros) >= 1.596
+BuildRequires:	sassc
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	gtk-update-icon-cache
@@ -85,16 +88,14 @@ Breeze cursor theme.
 %build
 install -d build
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %clean
 rm -rf $RPM_BUILD_ROOT
