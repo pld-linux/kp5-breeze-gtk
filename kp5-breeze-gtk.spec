@@ -34,6 +34,7 @@ BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kservice-devel
 BuildRequires:	kf5-kwidgetsaddons-devel
 BuildRequires:	kf5-kwindowsystem-devel
+BuildRequires:	kp5-breeze-devel
 BuildRequires:	kp5-kdecoration-devel >= %{kdeplasmaver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	ninja
