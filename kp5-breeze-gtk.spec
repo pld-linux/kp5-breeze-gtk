@@ -61,9 +61,7 @@ Group:		Themes
 Requires:	gtk-update-icon-cache
 Requires:	hicolor-icon-theme
 Conflicts:	kp5-breeze < 5.4.0-5
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n %{kpname}-icon-theme
 Breeze is an icon theme.
@@ -76,9 +74,7 @@ Summary:	Breeze cursor theme
 Group:		Themes
 Conflicts:	breeze-icon-theme < 5.4.0-7
 Conflicts:	kp5-breeze < 5.4.0-5
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n %{kpname}-cursor-theme
 Breeze cursor theme.
