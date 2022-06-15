@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.24.5
+%define		kdeplasmaver	5.25.0
 %define		qtver		5.9.0
 %define		kpname		breeze-gtk
 Summary:	Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.24.5
+Version:	5.25.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1f728695039f0354474e0d77d94ec609
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	2c737b8ee816cd82f7eada4d167e34f1
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
