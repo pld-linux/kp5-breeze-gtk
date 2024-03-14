@@ -1,49 +1,50 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.93.0
+%define		kdeplasmaver	5.27.10
 %define		qtver		5.15.2
 %define		kpname		breeze-gtk
 Summary:	Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
 Name:		kp5-%{kpname}
-Version:	5.93.0
-Release:	0.1
+Version:	5.27.10
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	70712a12cf4e293be298ae997ddce489
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	9acdc232ea675b761e7386837f25f420
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6DBus-devel
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Widgets-devel
-BuildRequires:	Qt6Xml-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5DBus-devel
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Widgets-devel
+BuildRequires:	Qt5X11Extras-devel
+BuildRequires:	Qt5Xml-devel
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gettext-devel
 BuildRequires:	hardlink >= 1.0-3
-BuildRequires:	kf6-attica-devel
-BuildRequires:	kf6-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf6-frameworkintegration-devel
-BuildRequires:	kf6-kauth-devel
-BuildRequires:	kf6-kcmutils-devel
-BuildRequires:	kf6-kcodecs-devel
-BuildRequires:	kf6-kconfig-devel
-BuildRequires:	kf6-kconfigwidgets-devel
-BuildRequires:	kf6-kcoreaddons-devel
-BuildRequires:	kf6-kguiaddons-devel
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-kiconthemes-devel
-BuildRequires:	kf6-kservice-devel
-BuildRequires:	kf6-kwidgetsaddons-devel
-BuildRequires:	kf6-kwindowsystem-devel
+BuildRequires:	kf5-attica-devel
+BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-frameworkintegration-devel
+BuildRequires:	kf5-kauth-devel
+BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kcodecs-devel
+BuildRequires:	kf5-kconfig-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-kcoreaddons-devel
+BuildRequires:	kf5-kguiaddons-devel
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kiconthemes-devel
+BuildRequires:	kf5-kservice-devel
+BuildRequires:	kf5-kwidgetsaddons-devel
+BuildRequires:	kf5-kwindowsystem-devel
 BuildRequires:	kp5-breeze-devel
 BuildRequires:	kp5-kdecoration-devel >= %{kdeplasmaver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	python3-pycairo-devel
-BuildRequires:	qt6-build >= %{qtver}
-BuildRequires:	qt6-qmake
+BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt5-qmake
 BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	sassc
 BuildRequires:	tar >= 1:1.22
